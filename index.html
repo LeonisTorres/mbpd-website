@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBPD Refinish &amp; Repairs LLC | Surface Restoration in Tampa Bay</title>
+<meta name="description" content="Professional countertop, cabinet, tub, tile and interior paint restoration in the Tampa Bay area. Same surface, made new.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#FF2A2A;
+    --red-deep:#C81A1A;
+    --ink:#18140F;
+    --charcoal:#221D18;
+    --paper:#F1EDE5;
+    --stone:#E3DDD0;
+    --stone-line:#CFC7B6;
+    --white:#FFFFFF;
+    --muted:#5C564C;
+    --max:1180px;
+    --ease:cubic-bezier(.22,.9,.32,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    letter-spacing:.01em;
+    line-height:.95;
+    text-transform:uppercase;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--red);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--red);display:inline-block;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 30px;
+    background:var(--red);
+    color:var(--white);
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    transition:transform .35s var(--ease), background .3s, box-shadow .35s;
+    box-shadow:0 0 0 0 rgba(255,42,42,0);
+  }
+  .btn:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(255,42,42,.55);}
+  .btn.ghost{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.55);
+    color:var(--white);
+  }
+  .btn.ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+  .btn.dark{background:var(--ink);}
+  .btn.dark:hover{background:#000;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 0;
+    transition:padding .35s var(--ease), background .35s var(--ease), box-shadow .35s;
+  }
+  header.solid{
+    padding:12px 0;
+    background:rgba(24,20,15,.92);
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 30px -18px rgba(0,0,0,.5);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{height:44px;width:44px;object-fit:contain;transition:height .35s var(--ease);}
+  header.solid .brand img{height:36px;width:36px;}
+  .brand .word{font-family:'Anton',sans-serif;color:#fff;font-size:19px;letter-spacing:.02em;line-height:1;}
+  .brand .word span{color:var(--red);}
+  .brand .word small{display:block;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.14em;color:rgba(255,255,255,.65);font-weight:600;margin-top:3px;text-transform:uppercase;}
+  nav{display:flex;align-items:center;gap:34px;}
+  nav a.navlink{
+    color:rgba(255,255,255,.88);
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    position:relative;
+    padding:4px 0;
+  }
+  nav a.navlink::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .3s var(--ease);}
+  nav a.navlink:hover::after{width:100%;}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .lang-toggle{
+    display:flex;border:1px solid rgba(255,255,255,.35);border-radius:20px;overflow:hidden;
+  }
+  .lang-toggle button{
+    background:transparent;border:none;color:rgba(255,255,255,.7);font-size:12px;font-weight:700;
+    padding:6px 12px;cursor:pointer;transition:.25s;font-family:'Inter',sans-serif;
+  }
+  .lang-toggle button.active{background:var(--red);color:#fff;}
+  .tel-pill{
+    display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:13.5px;
+    border:1px solid rgba(255,255,255,.35);padding:9px 16px;border-radius:20px;transition:.3s;
+  }
+  .tel-pill:hover{border-color:var(--red);background:rgba(255,42,42,.12);}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:.3s;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    height:100vh;
+    min-height:640px;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    background:var(--ink);
+  }
+  .hero video{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:saturate(1.05) contrast(1.05);
+    opacity:.55;
+  }
+  .hero .scrim{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(15,12,9,.55) 0%, rgba(15,12,9,.35) 35%, rgba(15,12,9,.85) 100%),
+      linear-gradient(100deg, rgba(15,12,9,.75) 10%, rgba(15,12,9,.15) 55%);
+  }
+  .hero-content{position:relative;z-index:2;width:100%;padding-bottom:96px;}
+  .hero h1{
+    font-size:clamp(46px,8vw,104px);
+    color:#fff;
+    max-width:920px;
+  }
+  .hero h1 .accent{color:var(--red);}
+  .hero p.lede{
+    color:rgba(255,255,255,.85);
+    font-size:clamp(15px,1.6vw,18.5px);
+    max-width:480px;
+    margin:22px 0 34px;
+    line-height:1.6;
+    font-weight:400;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;}
+  .hero-eyebrow{margin-bottom:22px;}
+  .hero-eyebrow .eyebrow{color:#fff;}
+  .hero-eyebrow .eyebrow::before{background:var(--red);}
+
+  .trust-bar{
+    position:relative;z-index:2;
+    background:var(--ink);
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .trust-bar .wrap{
+    display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center;
+    padding:18px 24px;
+  }
+  .trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;}
+  .trust-item .stars{color:var(--red);letter-spacing:2px;font-size:14px;}
+  .trust-item strong{color:#fff;font-weight:800;}
+
+  /* ===== WIPE DIVIDER ===== */
+  .wipe-divider{
+    position:relative;height:64px;background:var(--ink);
+    margin-top:-1px;
+  }
+  .wipe-divider svg{position:absolute;inset:0;width:100%;height:100%;}
+
+  section{padding:110px 0;position:relative;}
+  .section-head{max-width:640px;margin-bottom:64px;}
+  .section-head h2{font-size:clamp(32px,4.6vw,54px);margin-top:16px;}
+  .section-head p{color:var(--muted);font-size:16px;line-height:1.7;margin-top:18px;max-width:520px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head.center .eyebrow{justify-content:center;}
+  .section-head.center .eyebrow::before{display:none;}
+  .section-head.center p{margin-left:auto;margin-right:auto;}
+
+  /* reveal on scroll — hidden state only applies once JS confirms it's active,
+     so content is never stuck invisible if JS is slow, blocked, or errors */
+  .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .js .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ===== SERVICES ===== */
+  .services{background:var(--paper);position:relative;overflow:hidden;}
+  .services-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;opacity:.5;}
+  .services-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, var(--paper) 0%, rgba(241,237,229,.55) 30%, rgba(241,237,229,.55) 55%, var(--paper) 92%);
+  }
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone-line);border:1px solid var(--stone-line);position:relative;z-index:2;}
+  .service-card{
+    background:rgba(241,237,229,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    padding:38px 30px 34px;position:relative;overflow:hidden;
+    transition:background .4s var(--ease);
+  }
+  .service-card:hover{background:rgba(255,255,255,.95);}
+  .service-card .num{font-family:'Anton';font-size:13px;color:var(--red);letter-spacing:.06em;}
+  .service-card .icon{margin:22px 0 26px;width:46px;height:46px;color:var(--ink);}
+  .service-card h3{font-size:22px;margin-bottom:12px;}
+  .service-card p{font-size:14.5px;color:var(--muted);line-height:1.65;margin:0;}
+  .service-card::after{
+    content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--red);
+    transition:width .45s var(--ease);
+  }
+  .service-card:hover::after{width:100%;}
+  .service-card:nth-child(5){grid-column:span 2;}
+  .service-card:nth-child(5) .icon{margin-top:0;}
+
+  /* ===== GALLERY ===== */
+  .gallery-section{background:var(--charcoal);color:#fff;}
+  .gallery-section .section-head p{color:rgba(255,255,255,.65);}
+  .gallery-section .eyebrow{color:var(--red);}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px;
+  }
+  .gallery-item{
+    position:relative;overflow:hidden;cursor:pointer;background:#000;
+    border-radius:2px;
+  }
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .gallery-item:nth-child(4){grid-column:span 2;}
+  .gallery-item:nth-child(7){grid-row:span 2;}
+  .gallery-item img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .8s var(--ease);
+  }
+  .gallery-item::before{
+    content:"";position:absolute;inset:0;z-index:2;
+    background:linear-gradient(120deg, transparent 45%, rgba(255,42,42,.85) 50%, transparent 55%);
+    transform:translateX(-140%);
+    transition:transform .75s var(--ease);
+  }
+  .gallery-item:hover::before{transform:translateX(140%);}
+  .gallery-item:hover img{transform:scale(1.08);}
+  .gallery-item .tag{
+    position:absolute;left:14px;bottom:14px;z-index:3;
+    color:#fff;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    display:flex;align-items:center;gap:8px;
+    opacity:0;transform:translateY(8px);transition:.4s var(--ease);
+  }
+  .gallery-item:hover .tag{opacity:1;transform:translateY(0);}
+  .gallery-item .tag::before{content:"";width:7px;height:7px;background:var(--red);border-radius:50%;}
+
+  /* ===== FOTO BANDA ===== */
+  .photo-band{position:relative;padding:150px 0;overflow:hidden;background:var(--ink);}
+  .photo-band-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;}
+  .photo-band-overlay{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(100deg, rgba(15,12,9,.94) 15%, rgba(15,12,9,.72) 50%, rgba(15,12,9,.4) 100%),
+      linear-gradient(0deg, rgba(15,12,9,.5), rgba(15,12,9,.5));
+  }
+  .photo-band-content{position:relative;z-index:2;max-width:620px;}
+  .photo-band-content .eyebrow{color:#fff;}
+  .photo-band-content .eyebrow::before{background:var(--red);}
+  .photo-band-content h2{color:#fff;font-size:clamp(30px,4.2vw,48px);margin-top:18px;}
+  .photo-band-content p{color:rgba(255,255,255,.78);margin:20px 0 30px;font-size:16px;line-height:1.7;max-width:480px;}
+
+  /* ===== PROCESS ===== */
+  .process{background:var(--paper);position:relative;overflow:hidden;}
+  .process-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:.45;}
+  .process-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, var(--paper) 0%, rgba(241,237,229,.6) 28%, rgba(241,237,229,.7) 70%, var(--paper) 96%);
+  }
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .process-step{padding:20px 26px 26px;position:relative;background:rgba(241,237,229,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:2px;}
+  .process-step:not(:first-child){border-left:1px solid var(--stone-line);}
+  .process-step .pnum{
+    font-family:'Anton';font-size:56px;color:transparent;-webkit-text-stroke:1.5px var(--red);
+    margin-bottom:18px;line-height:1;
+  }
+  .process-step h3{font-size:19px;margin-bottom:12px;letter-spacing:0;}
+  .process-step p{font-size:14px;color:var(--muted);line-height:1.65;}
+  .process-line{display:none;}
+
+  /* ===== REVIEWS ===== */
+  .reviews{position:relative;overflow:hidden;background:var(--ink);padding:120px 0;}
+  .reviews-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+  .reviews-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(17,14,10,.93) 0%, rgba(17,14,10,.87) 55%, rgba(17,14,10,.93) 100%);
+  }
+  .reviews .wrap{position:relative;z-index:2;}
+  .reviews .section-head h2{color:#fff;}
+  .reviews .section-head p{color:rgba(255,255,255,.65);}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .review-card{
+    background:var(--white);padding:34px 30px;border:1px solid var(--stone-line);
+    display:flex;flex-direction:column;gap:18px;position:relative;
+    box-shadow:0 24px 50px -20px rgba(0,0,0,.5);
+  }
+  .review-card .stars{color:var(--red);letter-spacing:3px;font-size:15px;}
+  .review-card p{font-size:15px;line-height:1.7;color:var(--ink);margin:0;flex:1;}
+  .review-who{display:flex;align-items:center;gap:12px;}
+  .review-avatar{
+    width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:15px;
+  }
+  .review-who strong{font-size:14px;display:block;}
+  .review-who span{font-size:12px;color:var(--muted);}
+  .review-source{display:flex;justify-content:center;margin-top:48px;}
+  .review-source a{
+    display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;
+    color:#fff;border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:4px;transition:.3s;
+  }
+  .review-source a:hover{border-color:var(--red);color:var(--red);}
+
+  /* ===== CTA BAND ===== */
+  .cta-band{
+    background:var(--red);color:#fff;padding:90px 0;position:relative;overflow:hidden;
+  }
+  .cta-bg{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;
+    opacity:.75;z-index:0;
+  }
+  .cta-band::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(100deg, rgba(255,42,42,.9) 20%, rgba(255,42,42,.45) 65%, rgba(200,26,26,.35) 100%);
+  }
+  .cta-band::before{
+    content:"";position:absolute;top:-40%;right:-8%;width:600px;height:600px;
+    background:rgba(255,255,255,.08);border-radius:50%;z-index:2;
+  }
+  .cta-band .wrap{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;}
+  .cta-band h2{font-size:clamp(28px,4vw,46px);max-width:600px;color:#fff;}
+  .cta-band .btn{background:var(--ink);}
+  .cta-band .btn:hover{background:#000;}
+
+  /* ===== QUOTE FORM ===== */
+  .quote-section{background:var(--stone);}
+  .quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start;}
+  .quote-info h2{font-size:clamp(30px,3.6vw,44px);margin-top:16px;}
+  .quote-info p{color:var(--muted);font-size:15.5px;line-height:1.7;margin-top:18px;max-width:400px;}
+  .quote-form{
+    background:var(--white);border:1px solid var(--stone-line);padding:40px;
+    display:flex;flex-direction:column;gap:20px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .field{display:flex;flex-direction:column;gap:8px;}
+  .field label{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);}
+  .field input, .field select, .field textarea{
+    border:1.5px solid var(--stone-line);background:var(--paper);
+    padding:13px 14px;font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);
+    border-radius:2px;transition:border-color .25s, background .25s;
+    width:100%;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--red);background:var(--white);
+  }
+  .field textarea{resize:vertical;min-height:100px;font-family:'Inter',sans-serif;}
+  .quote-form .btn{align-self:flex-start;border:none;cursor:pointer;}
+  .quote-form .btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  .form-status{font-size:13.5px;font-weight:600;margin:0;min-height:18px;}
+  .form-status.success{color:#1a7a3c;}
+  .form-status.error{color:var(--red-deep);}
+  @media (max-width:900px){
+    .quote-grid{grid-template-columns:1fr;gap:40px;}
+    .form-row{grid-template-columns:1fr;}
+    .quote-form{padding:28px;}
+  }
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:rgba(255,255,255,.75);padding:80px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px;margin-bottom:70px;}
+  .footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .footer-brand img{height:52px;width:52px;object-fit:contain;}
+  .footer-brand .word{font-family:'Anton';color:#fff;font-size:22px;}
+  .footer-brand .word span{color:var(--red);}
+  .footer-tagline{font-size:14px;color:rgba(255,255,255,.55);max-width:280px;line-height:1.6;}
+  footer h4{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:700;}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  footer ul a{font-size:14px;color:rgba(255,255,255,.65);transition:.25s;}
+  footer ul a:hover{color:var(--red);}
+  .footer-contact-item{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.75);margin-bottom:14px;}
+  .footer-contact-item svg{flex-shrink:0;margin-top:2px;color:var(--red);}
+  .social-links{display:flex;gap:12px;margin-top:20px;}
+  .social-links a{
+    width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);
+    transition:.3s;
+  }
+  .social-links a:hover{background:var(--red);border-color:var(--red);color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:26px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:12.5px;color:rgba(255,255,255,.4);
+  }
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(10,8,6,.94);z-index:1000;
+    display:flex;align-items:center;justify-content:center;padding:40px;
+    opacity:0;pointer-events:none;transition:opacity .35s var(--ease);
+  }
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{max-width:min(900px,90vw);max-height:85vh;object-fit:contain;box-shadow:0 40px 80px rgba(0,0,0,.6);}
+  .lightbox-close{position:absolute;top:28px;right:32px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;line-height:1;}
+
+  /* ===== MOBILE ===== */
+  @media (max-width:980px){
+    nav{display:none;}
+    .burger{display:block;}
+    .header-actions .tel-pill span.label{display:none;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;}
+    .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+    .process-grid{grid-template-columns:repeat(2,1fr);row-gap:44px;}
+    .process-line{display:none;}
+    .process-step:not(:first-child){border-left:none;}
+    .review-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;row-gap:40px;}
+  }
+  @media (max-width:560px){
+    .service-grid{grid-template-columns:1fr;}
+    .service-card:nth-child(5){grid-column:span 1;}
+    .gallery-grid{grid-template-columns:1fr;grid-auto-rows:260px;}
+    .gallery-item:nth-child(1),.gallery-item:nth-child(4),.gallery-item:nth-child(7){grid-column:span 1;grid-row:span 1;}
+    .process-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .cta-band .wrap{flex-direction:column;align-items:flex-start;}
+    .hero-content{padding-bottom:60px;}
+    .photo-band{padding:90px 0;}
+  }
+
+  /* mobile nav panel */
+  .mobile-nav{
+    position:fixed;inset:0 0 0 auto;width:82%;max-width:340px;background:var(--ink);
+    z-index:200;transform:translateX(100%);transition:transform .4s var(--ease);
+    padding:28px 26px;display:flex;flex-direction:column;gap:26px;
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav a{color:#fff;font-family:'Anton';font-size:22px;text-transform:uppercase;}
+  .mobile-nav .btn{width:100%;justify-content:center;margin-top:10px;}
+  .mobile-nav-close{align-self:flex-end;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;}
+  .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:199;opacity:0;pointer-events:none;transition:.3s;}
+  .mobile-overlay.open{opacity:1;pointer-events:auto;}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- ===== HEADER ===== -->
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img src="img/logo.png" alt="MBPD Refinish & Repairs logo">
+      <span class="word">MBPD<span>.</span><small data-es="Refinish &amp; Repairs LLC" data-en="Refinish &amp; Repairs LLC">Refinish &amp; Repairs LLC</small></span>
+    </a>
+    <nav>
+      <a class="navlink" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+      <a class="navlink" href="#trabajos" data-es="Trabajos" data-en="Our Work">Trabajos</a>
+      <a class="navlink" href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
+      <a class="navlink" href="#resenas" data-es="Reseñas" data-en="Reviews">Reseñas</a>
+      <a class="navlink" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle">
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="en" class="active">EN</button>
+      </div>
+      <a class="tel-pill" href="tel:+18137292525">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="label">(813) 729-2525</span>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+  <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+  <a href="#trabajos" data-es="Trabajos" data-en="Our Work">Trabajos</a>
+  <a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
+  <a href="#resenas" data-es="Reseñas" data-en="Reviews">Reseñas</a>
+  <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a class="btn" href="tel:+18137292525">(813) 729-2525</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<div id="top"></div>
+<section class="hero">
+  <video autoplay muted loop playsinline poster="img/gallery-3.jpg">
+    <source src="img/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="scrim"></div>
+  <div class="hero-content">
+    <div class="wrap">
+      <div class="hero-eyebrow">
+        <span class="eyebrow" data-es="Tampa Bay · Encimeras · Gabinetes · Tinas · Pintura" data-en="Tampa Bay · Countertops · Cabinets · Tubs · Paint">Tampa Bay · Encimeras · Gabinetes · Tinas · Pintura</span>
+      </div>
+      <h1>
+        <span data-es="LO MISMO." data-en="THE SAME SURFACE.">LO MISMO.</span><br>
+        <span class="accent" data-es="PERO NUEVO." data-en="MADE NEW.">PERO NUEVO.</span>
+      </h1>
+      <p class="lede" data-es="Restauramos encimeras, gabinetes, tinas, azulejos y paredes para que luzcan — y duren — como nuevas. Sin demoliciones, sin semanas de espera." data-en="We restore countertops, cabinets, tubs, tile and walls to look — and last — like new. No demolition, no weeks of waiting.">Restauramos encimeras, gabinetes, tinas, azulejos y paredes para que luzcan — y duren — como nuevas. Sin demoliciones, sin semanas de espera.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn" data-es="Solicita tu cotización" data-en="Request your quote">Solicita tu cotización</a>
+        <a href="#trabajos" class="btn ghost" data-es="Ver trabajos realizados" data-en="See our work">Ver trabajos realizados</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-item">
+      <span class="stars">★★★★★</span>
+      <span><strong>5.0</strong> · <span data-es="10 reseñas en Google" data-en="10 Google reviews">10 reseñas en Google</span></span>
+    </div>
+    <div class="trust-item" data-es="Licenciado y asegurado en Florida" data-en="Licensed &amp; insured in Florida">Licenciado y asegurado en Florida</div>
+    <div class="trust-item" data-es="Sirviendo el área de Tampa Bay" data-en="Serving the Tampa Bay area">Sirviendo el área de Tampa Bay</div>
+    <div class="trust-item" data-es="Presupuesto claro antes de empezar" data-en="Clear scope before we start">Presupuesto claro antes de empezar</div>
+  </div>
+</div>
+
+<div class="wipe-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none"><polygon points="0,64 1200,64 1200,0 0,40" fill="#F1EDE5"/></svg>
+</div>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="services" id="servicios">
+  <img class="services-bg" src="img/gallery-6.jpg" alt="" loading="lazy">
+  <div class="services-overlay"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-es="Lo que hacemos" data-en="What we do">Lo que hacemos</span>
+      <h2 data-es="Cuatro oficios. Un mismo nivel de acabado." data-en="Four trades. One standard of finish.">Cuatro oficios. Un mismo nivel de acabado.</h2>
+      <p data-es="Cada superficie se prepara, repara y acaba a mano, con procesos pensados para resistir el uso diario durante años." data-en="Every surface is prepped, repaired and finished by hand, with processes built to withstand daily use for years.">Cada superficie se prepara, repara y acaba a mano, con procesos pensados para resistir el uso diario durante años.</p>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="service-grid reveal">
+      <div class="service-card">
+        <span class="num">01</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="46" height="46"><rect x="2" y="9" width="20" height="9" rx="1"/><path d="M2 9V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3"/><path d="M6 18v2M18 18v2"/></svg></div>
+        <h3 data-es="Encimeras" data-en="Countertops">Encimeras</h3>
+        <p data-es="Refinado y reparación de encimeras de cocina y baño: eliminamos grietas, quemaduras y desgaste con un acabado duradero." data-en="Kitchen and bath countertop refinishing and repair: we eliminate cracks, burns and wear with a long-lasting finish.">Refinado y reparación de encimeras de cocina y baño: eliminamos grietas, quemaduras y desgaste con un acabado duradero.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">02</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="46" height="46"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/><circle cx="9" cy="12" r=".6" fill="currentColor"/><circle cx="19" cy="12" r=".6" fill="currentColor"/></svg></div>
+        <h3 data-es="Gabinetes" data-en="Cabinets">Gabinetes</h3>
+        <p data-es="Renovamos gabinetes de cocina sin reemplazarlos: lijado, reparación de estructura y un acabado que transforma el espacio." data-en="We renew kitchen cabinets without replacing them: sanding, structural repair and a finish that transforms the space.">Renovamos gabinetes de cocina sin reemplazarlos: lijado, reparación de estructura y un acabado que transforma el espacio.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">03</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="46" height="46"><path d="M3 12h18M4 12v3a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5v-3M5 12V7a2 2 0 0 1 2-2"/><circle cx="8" cy="5" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <h3 data-es="Tinas y Azulejos" data-en="Tubs &amp; Tile">Tinas y Azulejos</h3>
+        <p data-es="Restauración de tinas, duchas y azulejos: cerramos poros, sellamos filtraciones y devolvemos el brillo original." data-en="Tub, shower and tile restoration: we close pores, seal leaks and bring back the original shine.">Restauración de tinas, duchas y azulejos: cerramos poros, sellamos filtraciones y devolvemos el brillo original.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">04</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="46" height="46"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3 data-es="Pintura y Reparaciones" data-en="Paint &amp; Repairs">Pintura y Reparaciones</h3>
+        <p data-es="Pintura interior y reparaciones generales: paredes, molduras y detalles terminados con precisión." data-en="Interior painting and general repairs: walls, trim and details finished with precision.">Pintura interior y reparaciones generales: paredes, molduras y detalles terminados con precisión.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">05</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="46" height="46"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></div>
+        <h3 data-es="Trash Out y Limpieza de Propiedad" data-en="Trash Out &amp; Property Cleanout">Trash Out y Limpieza de Propiedad</h3>
+        <p data-es="Despejamos muebles, escombros y desechos para dejar la propiedad lista para renovar, vender o rentar." data-en="We clear out furniture, debris and unwanted items to get the property ready to renovate, sell or rent.">Despejamos muebles, escombros y desechos para dejar la propiedad lista para renovar, vender o rentar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERÍA ===== -->
+<section class="gallery-section" id="trabajos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-es="Trabajo real" data-en="Real work">Trabajo real</span>
+      <h2 data-es="Proyectos recientes en Tampa Bay" data-en="Recent projects in Tampa Bay">Proyectos recientes en Tampa Bay</h2>
+      <p data-es="Cada foto es un trabajo terminado por nuestro equipo. Pasa el cursor para ver el acabado de cerca." data-en="Every photo is a job finished by our team. Hover to see the finish up close.">Cada foto es un trabajo terminado por nuestro equipo. Pasa el cursor para ver el acabado de cerca.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-full="img/gallery-1.jpg"><img src="img/gallery-1.jpg" loading="lazy" alt="Restored tub"><span class="tag" data-es="Restauración de tina" data-en="Tub restoration">Restauración de tina</span></div>
+      <div class="gallery-item" data-full="img/gallery-2.jpg"><img src="img/gallery-2.jpg" loading="lazy" alt="Full bathroom"><span class="tag" data-es="Baño completo" data-en="Full bathroom">Baño completo</span></div>
+      <div class="gallery-item" data-full="img/gallery-3.jpg"><img src="img/gallery-3.jpg" loading="lazy" alt="Tub and tile"><span class="tag" data-es="Tina y azulejo" data-en="Tub &amp; tile">Tina y azulejo</span></div>
+      <div class="gallery-item" data-full="img/gallery-4.jpg"><img src="img/gallery-4.jpg" loading="lazy" alt="Vanity and floor"><span class="tag" data-es="Vanidad y piso" data-en="Vanity &amp; floor">Vanidad y piso</span></div>
+      <div class="gallery-item" data-full="img/gallery-5.jpg"><img src="img/gallery-5.jpg" loading="lazy" alt="Restored shower"><span class="tag" data-es="Ducha restaurada" data-en="Shower restoration">Ducha restaurada</span></div>
+      <div class="gallery-item" data-full="img/gallery-6.jpg"><img src="img/gallery-6.jpg" loading="lazy" alt="Tub finish"><span class="tag" data-es="Acabado de tina" data-en="Tub finish">Acabado de tina</span></div>
+      <div class="gallery-item" data-full="img/gallery-7.jpg"><img src="img/gallery-7.jpg" loading="lazy" alt="Renovated bathroom"><span class="tag" data-es="Baño renovado" data-en="Renovated bath">Baño renovado</span></div>
+      <div class="gallery-item" data-full="img/gallery-8.jpg"><img src="img/gallery-8.jpg" loading="lazy" alt="Corner tub"><span class="tag" data-es="Detalle de esquina" data-en="Corner detail">Detalle de esquina</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESO ===== -->
+<section class="process" id="proceso">
+  <img class="process-bg" src="img/gallery-8.jpg" alt="" loading="lazy">
+  <div class="process-overlay"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-es="Cómo trabajamos" data-en="How we work">Cómo trabajamos</span>
+      <h2 data-es="Un proceso claro, de principio a fin" data-en="A clear process, start to finish">Un proceso claro, de principio a fin</h2>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-line"></div>
+      <div class="process-step">
+        <div class="pnum">01</div>
+        <h3 data-es="Evaluación en sitio" data-en="On-site evaluation">Evaluación en sitio</h3>
+        <p data-es="Visitamos tu propiedad, revisamos el estado de la superficie y definimos el alcance exacto del trabajo." data-en="We visit your property, assess the surface condition and define the exact scope of work.">Visitamos tu propiedad, revisamos el estado de la superficie y definimos el alcance exacto del trabajo.</p>
+      </div>
+      <div class="process-step">
+        <div class="pnum">02</div>
+        <h3 data-es="Preparación" data-en="Preparation">Preparación</h3>
+        <p data-es="Reparamos grietas y daños, limpiamos a profundidad y protegemos el resto del espacio." data-en="We repair cracks and damage, deep clean the surface and protect the surrounding space.">Reparamos grietas y daños, limpiamos a profundidad y protegemos el resto del espacio.</p>
+      </div>
+      <div class="process-step">
+        <div class="pnum">03</div>
+        <h3 data-es="Acabado" data-en="Finishing">Acabado</h3>
+        <p data-es="Aplicamos el sistema de recubrimiento adecuado a mano, capa por capa, para un resultado uniforme." data-en="We apply the right coating system by hand, layer by layer, for a uniform result.">Aplicamos el sistema de recubrimiento adecuado a mano, capa por capa, para un resultado uniforme.</p>
+      </div>
+      <div class="process-step">
+        <div class="pnum">04</div>
+        <h3 data-es="Entrega" data-en="Handoff">Entrega</h3>
+        <p data-es="Inspeccionamos el resultado contigo y dejamos el espacio listo para usarse de inmediato." data-en="We inspect the result together with you and leave the space ready to use right away.">Inspeccionamos el resultado contigo y dejamos el espacio listo para usarse de inmediato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOTO BANDA ===== -->
+<section class="photo-band">
+  <img class="photo-band-bg" src="img/gallery-4.jpg" alt="" loading="lazy">
+  <div class="photo-band-overlay"></div>
+  <div class="wrap photo-band-content reveal">
+    <span class="eyebrow" data-es="Hecho a mano, en tu propiedad" data-en="Hand-finished, on your property">Hecho a mano, en tu propiedad</span>
+    <h2 data-es="No cortamos esquinas. Restauramos superficies para que duren." data-en="We don't cut corners. We restore surfaces to last.">No cortamos esquinas. Restauramos superficies para que duren.</h2>
+    <p data-es="Sin subcontratistas de última hora. El mismo equipo que evalúa tu proyecto es el que lo termina." data-en="No last-minute subcontractors. The same team that evaluates your project is the one that finishes it.">Sin subcontratistas de última hora. El mismo equipo que evalúa tu proyecto es el que lo termina.</p>
+    <a href="#contacto" class="btn" data-es="Solicita tu cotización" data-en="Request your quote">Solicita tu cotización</a>
+  </div>
+</section>
+
+<!-- ===== RESEÑAS ===== -->
+<section class="reviews" id="resenas">
+  <img class="reviews-bg" src="img/gallery-7.jpg" alt="" loading="lazy">
+  <div class="reviews-overlay"></div>
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" data-es="Clientes en Tampa Bay" data-en="Tampa Bay clients">Clientes en Tampa Bay</span>
+      <h2 data-es="5.0 estrellas, 10 reseñas en Google" data-en="5.0 stars, 10 Google reviews">5.0 estrellas, 10 reseñas en Google</h2>
+    </div>
+    <div class="review-grid reveal">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p data-es="&ldquo;Contraté a MBPD para renovar los gabinetes y encimeras de mi cocina y baño en Brandon, y los resultados fueron absolutamente increíbles. La transformación superó lo que esperaba.&rdquo;" data-en="&ldquo;I hired MBPD to renovate my kitchen and bathroom cabinets and countertops in Brandon, and the results were absolutely incredible. The transformation exceeded what I expected.&rdquo;">&ldquo;Contraté a MBPD para renovar los gabinetes y encimeras de mi cocina y baño en Brandon, y los resultados fueron absolutamente increíbles. La transformación superó lo que esperaba.&rdquo;</p>
+        <div class="review-who">
+          <div class="review-avatar">E</div>
+          <div><strong>Elena Ginel</strong><span data-es="Brandon, FL" data-en="Brandon, FL">Brandon, FL</span></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p data-es="&ldquo;100% garantizado: calidad, seguridad y destreza en su trabajo. Si necesitan un buen trabajo y con muy buena calidad, no duden en contactarlos.&rdquo;" data-en="&ldquo;100% guaranteed: quality, safety and skill in their work. If you need great work with excellent quality, don't hesitate to contact them.&rdquo;">&ldquo;100% garantizado: calidad, seguridad y destreza en su trabajo. Si necesitan un buen trabajo y con muy buena calidad, no duden en contactarlos.&rdquo;</p>
+        <div class="review-who">
+          <div class="review-avatar">C</div>
+          <div><strong>Camila Ramirez</strong><span data-es="Tampa Bay, FL" data-en="Tampa Bay, FL">Tampa Bay, FL</span></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p data-es="&ldquo;Siempre lo recomendaré en el área de Tampa. Me encantó mucho su trabajo.&rdquo;" data-en="&ldquo;I'll always recommend them in the Tampa area. I loved their work.&rdquo;">&ldquo;Siempre lo recomendaré en el área de Tampa. Me encantó mucho su trabajo.&rdquo;</p>
+        <div class="review-who">
+          <div class="review-avatar">A</div>
+          <div><strong>Álvaro Torres Navarro</strong><span data-es="Tampa, FL" data-en="Tampa, FL">Tampa, FL</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="review-source">
+      <a href="https://www.google.com/search?q=MBPD+Refinish+%26+Repairs+LLC" target="_blank" rel="noopener">
+        <span data-es="Ver todas las reseñas en Google" data-en="See all reviews on Google">Ver todas las reseñas en Google</span> →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band">
+  <img class="cta-bg" src="img/gallery-2.jpg" alt="" loading="lazy">
+  <div class="wrap">
+    <h2 data-es="Tu superficie merece una segunda vida." data-en="Your surface deserves a second life.">Tu superficie merece una segunda vida.</h2>
+    <a href="#contacto" class="btn" data-es="Solicita tu cotización" data-en="Request your quote">Solicita tu cotización</a>
+  </div>
+</section>
+
+<!-- ===== QUOTE FORM ===== -->
+<section class="quote-section" id="contacto">
+  <div class="wrap">
+    <div class="quote-grid">
+      <div class="quote-info reveal">
+        <span class="eyebrow" data-es="Solicita tu cotización" data-en="Request your quote">Solicita tu cotización</span>
+        <h2 data-es="Cuéntanos de tu proyecto" data-en="Tell us about your project">Cuéntanos de tu proyecto</h2>
+        <p data-es="Completa el formulario con los detalles de tu propiedad y te contactamos para coordinar una evaluación." data-en="Fill out the form with your property details and we'll reach out to schedule an evaluation.">Completa el formulario con los detalles de tu propiedad y te contactamos para coordinar una evaluación.</p>
+        <div class="footer-contact-item" style="margin-top:34px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+18137292525">(813) 729-2525</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <a href="mailto:info@mbpdrefinishandrepairs.com">info@mbpdrefinishandrepairs.com</a>
+        </div>
+      </div>
+      <form class="quote-form reveal" id="quoteForm">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Nueva solicitud de cotización — MBPD Refinish & Repairs">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="q-name" data-es="Nombre completo" data-en="Full name">Nombre completo</label>
+            <input type="text" id="q-name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="q-phone" data-es="Teléfono" data-en="Phone">Teléfono</label>
+            <input type="tel" id="q-phone" name="phone" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="q-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+            <input type="email" id="q-email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="q-service" data-es="Servicio de interés" data-en="Service needed">Servicio de interés</label>
+            <select id="q-service" name="service">
+              <option data-es="Encimeras" data-en="Countertops">Encimeras</option>
+              <option data-es="Gabinetes" data-en="Cabinets">Gabinetes</option>
+              <option data-es="Tinas y Azulejos" data-en="Tubs &amp; Tile">Tinas y Azulejos</option>
+              <option data-es="Pintura y Reparaciones" data-en="Paint &amp; Repairs">Pintura y Reparaciones</option>
+              <option data-es="Trash Out y Limpieza" data-en="Trash Out &amp; Cleanout">Trash Out y Limpieza</option>
+              <option data-es="Otro" data-en="Other">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="q-address" data-es="Dirección o ciudad de la propiedad" data-en="Property address or city">Dirección o ciudad de la propiedad</label>
+          <input type="text" id="q-address" name="address">
+        </div>
+        <div class="field">
+          <label for="q-message" data-es="Cuéntanos sobre tu proyecto" data-en="Tell us about your project">Cuéntanos sobre tu proyecto</label>
+          <textarea id="q-message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn dark" id="quoteSubmitBtn">
+          <span data-es="Enviar solicitud" data-en="Send request">Enviar solicitud</span>
+        </button>
+
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="img/logo.png" alt="MBPD logo">
+          <span class="word">MBPD<span>.</span></span>
+        </div>
+        <p class="footer-tagline" data-es="Restauración de superficies en el área de Tampa Bay. Lo mismo, pero nuevo." data-en="Surface restoration in the Tampa Bay area. Same surface, made new.">Restauración de superficies en el área de Tampa Bay. Lo mismo, pero nuevo.</p>
+      </div>
+      <div>
+        <h4 data-es="Servicios" data-en="Services">Servicios</h4>
+        <ul>
+          <li><a href="#servicios" data-es="Encimeras" data-en="Countertops">Encimeras</a></li>
+          <li><a href="#servicios" data-es="Gabinetes" data-en="Cabinets">Gabinetes</a></li>
+          <li><a href="#servicios" data-es="Tinas y Azulejos" data-en="Tubs &amp; Tile">Tinas y Azulejos</a></li>
+          <li><a href="#servicios" data-es="Pintura y Reparaciones" data-en="Paint &amp; Repairs">Pintura y Reparaciones</a></li>
+          <li><a href="#servicios" data-es="Trash Out y Limpieza" data-en="Trash Out &amp; Cleanout">Trash Out y Limpieza</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-es="Enlaces" data-en="Links">Enlaces</h4>
+        <ul>
+          <li><a href="#trabajos" data-es="Trabajos" data-en="Our Work">Trabajos</a></li>
+          <li><a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a></li>
+          <li><a href="#resenas" data-es="Reseñas" data-en="Reviews">Reseñas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-es="Área de Tampa Bay, FL" data-en="Tampa Bay Area, FL">Área de Tampa Bay, FL</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+18137292525">(813) 729-2525</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+18139277605">(813) 927-7605</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/17DyEJwZ22/?mibextid=wwXlfr" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/mbpd_llc" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@mbpd_llc" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.14-3.14h-2.5v13.5a2.4 2.4 0 1 1-1.87-2.34v-2.6a5 5 0 1 0 4.37 4.94V9.4a6.75 6.75 0 0 0 3.14.77V7.62a4.28 4.28 0 0 1 0-.03V5.82z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MBPD Refinish &amp; Repairs LLC. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></span>
+      <span>mbpdrefinishandrepairs.com</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<script>
+(function(){
+  // Header solid on scroll
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => {
+    if(window.scrollY > 60){ header.classList.add('solid'); } else { header.classList.remove('solid'); }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile nav
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileClose = document.getElementById('mobileNavClose');
+  function openMobile(){ mobileNav.classList.add('open'); mobileOverlay.classList.add('open'); }
+  function closeMobile(){ mobileNav.classList.remove('open'); mobileOverlay.classList.remove('open'); }
+  burger.addEventListener('click', openMobile);
+  mobileClose.addEventListener('click', closeMobile);
+  mobileOverlay.addEventListener('click', closeMobile);
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.05, rootMargin:'0px 0px -5% 0px'});
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+  // Safety net: guarantee every section is visible even if the observer
+  // never fires for some element (edge cases, very short sections, etc.)
+  window.addEventListener('load', () => {
+    setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 2500);
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.getAttribute('data-full');
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') lightbox.classList.remove('open'); });
+
+  // Language toggle
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  function setLang(lang){
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if(val !== null) el.innerHTML = val;
+    });
+    langButtons.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+    document.documentElement.setAttribute('lang', lang);
+  }
+  langButtons.forEach(btn => btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang'))));
+  setLang('en');
+
+  // Quote form submission (Web3Forms)
+  const quoteForm = document.getElementById('quoteForm');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('quoteSubmitBtn');
+  const currentLang = () => document.documentElement.getAttribute('lang') || 'es';
+  const statusText = {
+    sending:   {es:'Enviando…', en:'Sending…'},
+    success:   {es:'¡Listo! Recibimos tu solicitud y te contactaremos pronto.', en:'Done! We received your request and will contact you soon.'},
+    error:     {es:'No se pudo enviar. Intenta de nuevo o llámanos al (813) 729-2525.', en:'Something went wrong. Please try again or call us at (813) 729-2525.'},
+    keymissing:{es:'Formulario en configuración. Mientras tanto, llámanos al (813) 729-2525.', en:'Form is being set up. In the meantime, call us at (813) 729-2525.'}
+  };
+  quoteForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const accessKey = quoteForm.querySelector('input[name="access_key"]').value;
+    if(!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY'){
+      formStatus.textContent = statusText.keymissing[currentLang()];
+      formStatus.className = 'form-status error';
+      return;
+    }
+    submitBtn.disabled = true;
+    formStatus.textContent = statusText.sending[currentLang()];
+    formStatus.className = 'form-status';
+    try{
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+        body: JSON.stringify(Object.fromEntries(new FormData(quoteForm)))
+      });
+      const data = await res.json();
+      if(data.success){
+        formStatus.textContent = statusText.success[currentLang()];
+        formStatus.className = 'form-status success';
+        quoteForm.reset();
+      } else {
+        formStatus.textContent = statusText.error[currentLang()];
+        formStatus.className = 'form-status error';
+      }
+    } catch(err){
+      formStatus.textContent = statusText.error[currentLang()];
+      formStatus.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
