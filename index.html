@@ -186,6 +186,10 @@
   .trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;}
   .trust-item .stars{color:var(--red);letter-spacing:2px;font-size:14px;}
   .trust-item strong{color:#fff;font-weight:800;}
+  .trust-item.rating{gap:12px;}
+  .trust-item.rating .stars{font-size:22px;letter-spacing:3px;}
+  .trust-item.rating strong{font-size:20px;}
+  .trust-item.rating span{font-size:15px;font-weight:700;}
 
   /* ===== WIPE DIVIDER ===== */
   .wipe-divider{
@@ -528,7 +532,7 @@
 </section>
 <div class="trust-bar">
   <div class="wrap">
-    <div class="trust-item">
+    <div class="trust-item rating">
       <span class="stars">★★★★★</span>
       <span><strong>5.0</strong> · <span data-es="10 reseñas en Google" data-en="10 Google reviews">10 reseñas en Google</span></span>
     </div>
@@ -610,24 +614,28 @@
             <span class="ba-label" data-es="ANTES" data-en="BEFORE">ANTES</span>
             <span class="ba-label" data-es="DESPUÉS" data-en="AFTER">DESPUÉS</span>
           </div>
-          <div class="ba-handle"><div class="ba-handle-circle"><img src="img/logo.png" alt="MBPD"></div></div>
+          <div class="ba-handle"><div class="ba-handle-circle">
+            <svg viewBox="0 0 40 40" width="26" height="26"><rect x="6" y="15" width="15" height="7" rx="2" fill="#fff"/><rect x="21" y="17" width="6" height="3" fill="#fff"/><path d="M9 22 L13 34 L19 34 L17 22 Z" fill="#fff"/><path d="M13.5 22 L14.5 27.5 L17.5 27.5 L17 22 Z" fill="#fff" opacity=".55"/><circle cx="30" cy="15.5" r="1.1" fill="#fff"/><circle cx="33.5" cy="18" r="1.4" fill="#fff"/><circle cx="31" cy="20.5" r="1.1" fill="#fff"/><circle cx="34.5" cy="22" r="0.9" fill="#fff"/></svg>
+          </div></div>
         </div>
         <span class="ba-caption" data-es="Encimera de cocina" data-en="Kitchen countertop">Encimera de cocina</span>
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-before="img/before-bath.jpg" data-after="img/after-bath.jpg">
-          <img class="ba-img ba-after" src="img/after-bath.jpg" loading="lazy" alt="Encimera de baño después">
+        <div class="ba-slider" data-before="img/tub-before.jpg" data-after="img/tub-after.jpg">
+          <img class="ba-img ba-after" src="img/tub-after.jpg" loading="lazy" alt="Tina y regadera después">
           <div class="ba-before-wrap">
-            <img class="ba-img ba-before" src="img/before-bath.jpg" loading="lazy" alt="Encimera de baño antes">
+            <img class="ba-img ba-before" src="img/tub-before.jpg" loading="lazy" alt="Tina y regadera antes">
           </div>
           <div class="ba-labels">
             <span class="ba-label" data-es="ANTES" data-en="BEFORE">ANTES</span>
             <span class="ba-label" data-es="DESPUÉS" data-en="AFTER">DESPUÉS</span>
           </div>
-          <div class="ba-handle"><div class="ba-handle-circle"><img src="img/logo.png" alt="MBPD"></div></div>
+          <div class="ba-handle"><div class="ba-handle-circle">
+            <svg viewBox="0 0 40 40" width="26" height="26"><rect x="6" y="15" width="15" height="7" rx="2" fill="#fff"/><rect x="21" y="17" width="6" height="3" fill="#fff"/><path d="M9 22 L13 34 L19 34 L17 22 Z" fill="#fff"/><path d="M13.5 22 L14.5 27.5 L17.5 27.5 L17 22 Z" fill="#fff" opacity=".55"/><circle cx="30" cy="15.5" r="1.1" fill="#fff"/><circle cx="33.5" cy="18" r="1.4" fill="#fff"/><circle cx="31" cy="20.5" r="1.1" fill="#fff"/><circle cx="34.5" cy="22" r="0.9" fill="#fff"/></svg>
+          </div></div>
         </div>
-        <span class="ba-caption" data-es="Encimera de baño" data-en="Bathroom vanity">Encimera de baño</span>
+        <span class="ba-caption" data-es="Tina y regadera" data-en="Tub &amp; shower">Tina y regadera</span>
       </div>
 
       <div class="ba-card">
@@ -640,37 +648,30 @@
             <span class="ba-label" data-es="ANTES" data-en="BEFORE">ANTES</span>
             <span class="ba-label" data-es="DESPUÉS" data-en="AFTER">DESPUÉS</span>
           </div>
-          <div class="ba-handle"><div class="ba-handle-circle"><img src="img/logo.png" alt="MBPD"></div></div>
+          <div class="ba-handle"><div class="ba-handle-circle">
+            <svg viewBox="0 0 40 40" width="26" height="26"><rect x="6" y="15" width="15" height="7" rx="2" fill="#fff"/><rect x="21" y="17" width="6" height="3" fill="#fff"/><path d="M9 22 L13 34 L19 34 L17 22 Z" fill="#fff"/><path d="M13.5 22 L14.5 27.5 L17.5 27.5 L17 22 Z" fill="#fff" opacity=".55"/><circle cx="30" cy="15.5" r="1.1" fill="#fff"/><circle cx="33.5" cy="18" r="1.4" fill="#fff"/><circle cx="31" cy="20.5" r="1.1" fill="#fff"/><circle cx="34.5" cy="22" r="0.9" fill="#fff"/></svg>
+          </div></div>
         </div>
         <span class="ba-caption" data-es="Encimera con fregadero doble" data-en="Countertop with double sink">Encimera con fregadero doble</span>
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-before="img/before-kitchen-3.jpg" data-after="img/after-kitchen-3.jpg">
-          <img class="ba-img ba-after" src="img/after-kitchen-3.jpg" loading="lazy" alt="Encimera de cocina después">
+        <div class="ba-slider" data-before="img/before-bath.jpg" data-after="img/after-bath.jpg">
+          <img class="ba-img ba-after" src="img/after-bath.jpg" loading="lazy" alt="Encimera de baño después">
           <div class="ba-before-wrap">
-            <img class="ba-img ba-before" src="img/before-kitchen-3.jpg" loading="lazy" alt="Encimera de cocina antes">
+            <img class="ba-img ba-before" src="img/before-bath.jpg" loading="lazy" alt="Encimera de baño antes">
           </div>
           <div class="ba-labels">
             <span class="ba-label" data-es="ANTES" data-en="BEFORE">ANTES</span>
             <span class="ba-label" data-es="DESPUÉS" data-en="AFTER">DESPUÉS</span>
           </div>
-          <div class="ba-handle"><div class="ba-handle-circle"><img src="img/logo.png" alt="MBPD"></div></div>
+          <div class="ba-handle"><div class="ba-handle-circle">
+            <svg viewBox="0 0 40 40" width="26" height="26"><rect x="6" y="15" width="15" height="7" rx="2" fill="#fff"/><rect x="21" y="17" width="6" height="3" fill="#fff"/><path d="M9 22 L13 34 L19 34 L17 22 Z" fill="#fff"/><path d="M13.5 22 L14.5 27.5 L17.5 27.5 L17 22 Z" fill="#fff" opacity=".55"/><circle cx="30" cy="15.5" r="1.1" fill="#fff"/><circle cx="33.5" cy="18" r="1.4" fill="#fff"/><circle cx="31" cy="20.5" r="1.1" fill="#fff"/><circle cx="34.5" cy="22" r="0.9" fill="#fff"/></svg>
+          </div></div>
         </div>
-        <span class="ba-caption" data-es="Encimera de cocina con ventana" data-en="Kitchen counter by the window">Encimera de cocina con ventana</span>
+        <span class="ba-caption" data-es="Encimera de baño" data-en="Bathroom vanity">Encimera de baño</span>
       </div>
 
-    </div>
-
-    <div class="ba-extra reveal">
-      <div class="ba-extra-item">
-        <img src="img/extra-kitchen-1.jpg" loading="lazy" alt="Acabado terminado de encimera">
-        <span class="tag" data-es="Acabado terminado" data-en="Finished detail">Acabado terminado</span>
-      </div>
-      <div class="ba-extra-item">
-        <img src="img/extra-kitchen-2.jpg" loading="lazy" alt="Acabado terminado de encimera">
-        <span class="tag" data-es="Detalle de esquina" data-en="Corner detail">Detalle de esquina</span>
-      </div>
     </div>
   </div>
 </section>
@@ -712,7 +713,7 @@
 
 <!-- ===== FOTO BANDA ===== -->
 <section class="photo-band">
-  <img class="photo-band-bg" src="img/after-kitchen-3.jpg" alt="" loading="lazy">
+  <img class="photo-band-bg" src="img/tub-after.jpg" alt="" loading="lazy">
   <div class="photo-band-overlay"></div>
   <div class="wrap photo-band-content reveal">
     <span class="eyebrow" data-es="Hecho a mano, en tu propiedad" data-en="Hand-finished, on your property">Hecho a mano, en tu propiedad</span>
